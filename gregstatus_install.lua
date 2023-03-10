@@ -1,7 +1,10 @@
 local os = require("os")
+local io = require("io")
 
 os.execute("wget https://raw.githubusercontent.com/coolian1337/oc-programs/main/gregstatus/gregstatus.lua")
-os.execute("gregstatus.lua >> /home/.shrc")
+local file = io.open("/home/.shrc", "w")
+file:write("gregstatus")
+file:close()
 os.execute("mv gregstatus.lua /home/")
 os.execute("wget https://raw.githubusercontent.com/iesika/iesika-OCPrograms/master/OC-bigfont/lib/bigfont.lua")
 os.execute("mv bigfont.lua /home/")
