@@ -2,7 +2,7 @@ local os = require("os")
 local io = require("io")
 
 print("Enter the name of the machine:")
-local machine_name = io.stdin:read()
+local machine_name = io.read()
 
 os.execute("wget https://raw.githubusercontent.com/coolian1337/oc-programs/main/gregstatus/gregstatus.lua")
 local file = io.open("/home/.shrc", "w")
