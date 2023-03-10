@@ -38,15 +38,17 @@ while true do
             end
         end
     end
-    for k,v in pairs(status.data.fluid) do
-        if type(v) == "table" then
-            for k2,v2 in pairs(v) do
-                if type(v2) == "table" then
-                    if v2.name ~= nil then
-                        local fluid = {}
-                        fluid.label = v2.label
-                        fluid.amount = v2.amount
-                        fluids[#fluids + 1] = fluid
+    if status.data.fluid ~= nil then
+        for k,v in pairs(status.data.fluid) do
+            if type(v) == "table" then
+                for k2,v2 in pairs(v) do
+                    if type(v2) == "table" then
+                        if v2.name ~= nil then
+                            local fluid = {}
+                            fluid.label = v2.label
+                            fluid.amount = v2.amount
+                            fluids[#fluids + 1] = fluid
+                        end
                     end
                 end
             end
