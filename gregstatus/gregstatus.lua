@@ -6,8 +6,10 @@ local gpu = component.gpu
 local font_size = 5
 bigfont.load(font_size)
 
+local args = {...}
+
 local r_x, r_y = gpu.getResolution()
-local machine_name = "Assembling machine"
+local machine_name = args[1]
 
 local function clear_screen()
     gpu.fill(1, 1, r_x, r_y, " ")

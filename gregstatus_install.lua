@@ -1,9 +1,12 @@
 local os = require("os")
 local io = require("io")
 
+print("Enter the name of the machine:")
+local machine_name = io.stdin:read()
+
 os.execute("wget https://raw.githubusercontent.com/coolian1337/oc-programs/main/gregstatus/gregstatus.lua")
 local file = io.open("/home/.shrc", "w")
-file:write("gregstatus")
+file:write("gregstatus "..machine_name)
 file:close()
 os.execute("mv gregstatus.lua /home/")
 os.execute("wget https://raw.githubusercontent.com/iesika/iesika-OCPrograms/master/OC-bigfont/lib/bigfont.lua")
