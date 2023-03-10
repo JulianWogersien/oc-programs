@@ -3,7 +3,7 @@ local component = require("component")
 local sensor = component.sensor
 local gpu = component.gpu
 
-local font_size = 4
+local font_size = 5
 bigfont.load(font_size)
 
 local r_x, r_y = gpu.getResolution()
